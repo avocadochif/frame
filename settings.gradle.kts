@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Frame"
 include(":app")
+include(":core:ui")
