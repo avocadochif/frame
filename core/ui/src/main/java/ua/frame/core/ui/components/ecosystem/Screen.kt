@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ua.frame.core.ui.theme.FrameTheme
 import ua.frame.core.ui.viewmodel.FrameViewModel
 
 @Composable
@@ -18,16 +19,20 @@ public inline fun <reified V, reified S, reified E> Screen(
     val viewModel = hiltViewModel<V>()
     val uiState = viewModel.uiState.collectAsStateWithLifecycle().value
 
-    Surface(
-        modifier = modifier,
+    FrameTheme(
         content = {
-            Box(
-                modifier = Modifier.fillMaxSize(),
+            Surface(
+                modifier = modifier,
                 content = {
-                    when (uiState == null) {
-                        true -> return@Surface
-                        false -> content(viewModel, uiState)
-                    }
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        content = {
+                            when (uiState == null) {
+                                true -> return@Surface
+                                false -> content(viewModel, uiState)
+                            }
+                        }
+                    )
                 }
             )
         }

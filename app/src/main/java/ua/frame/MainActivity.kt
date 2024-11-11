@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import dagger.hilt.android.AndroidEntryPoint
-import ua.frame.core.ui.theme.FrameTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -19,13 +18,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            FrameTheme {
-                GreetingScreen(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .statusBarsPadding()
-                )
-            }
+            GreetingScreen(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .statusBarsPadding()
+            )
         }
     }
 
