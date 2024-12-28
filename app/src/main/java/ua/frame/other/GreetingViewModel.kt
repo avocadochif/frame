@@ -1,4 +1,4 @@
-package ua.frame
+package ua.frame.other
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

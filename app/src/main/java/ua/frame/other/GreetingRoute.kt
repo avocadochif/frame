@@ -1,4 +1,4 @@
-package ua.frame
+package ua.frame.other
 
 import kotlinx.serialization.Serializable
 
