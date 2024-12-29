@@ -7,9 +7,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import ua.frame.core.ui.components.ecosystem.Screen
 
 @Composable
-fun FeedScreen() {
+fun FeedScreen(
+    modifier: Modifier,
+) {
     Screen<FeedViewModel, FeedUiState, FeedUiEvent>(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier,
         content = { viewModel, uiState ->
             Content(
                 modifier = Modifier.fillMaxSize()

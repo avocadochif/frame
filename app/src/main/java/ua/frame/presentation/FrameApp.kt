@@ -1,6 +1,5 @@
 package ua.frame.presentation
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -9,6 +8,7 @@ import ua.frame.presentation.navigation.FrameNavHost
 
 @Composable
 fun FrameApp(
+    modifier: Modifier,
     navController: NavHostController
 ) {
     FrameTheme(
@@ -16,7 +16,7 @@ fun FrameApp(
         dynamicColor = false,
         content = {
             FrameNavHost(
-                modifier = Modifier.fillMaxSize(),
+                modifier = modifier,
                 navController = navController
             )
         }
