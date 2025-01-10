@@ -3,9 +3,6 @@ import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.kapt)
-    alias(libs.plugins.dagger.hilt.android)
 }
 
 kotlin {
@@ -13,7 +10,7 @@ kotlin {
 }
 
 android {
-    namespace = "ua.frame.core.ui"
+    namespace = "ua.frame.core.utils"
     compileSdk = 35
 
     defaultConfig {
@@ -46,38 +43,15 @@ android {
     }
 
     buildFeatures {
-        compose = true
         buildConfig = false
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
     }
 }
 
 dependencies {
     // modules
-    implementation(projects.core.resources)
 
     // core
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.material3)
-
-    // compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-
-    // hilt
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.dagger.hilt.android)
-    kapt(libs.dagger.hilt.compiler)
+    implementation(libs.androidx.annotation)
 
     // testing
     testImplementation(libs.junit)

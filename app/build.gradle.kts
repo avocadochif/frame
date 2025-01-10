@@ -64,6 +64,8 @@ android {
 dependencies {
     // modules
     implementation(projects.core.ui)
+    implementation(projects.core.network)
+    implementation(projects.core.resources)
 
     // core
     implementation(libs.androidx.core.ktx)

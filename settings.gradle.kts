@@ -26,3 +26,5 @@ rootProject.name = "Frame"
 include(":app")
 include(":core:ui")
 include(":core:network")
+include(":core:resources")
+include(":core:utils")
