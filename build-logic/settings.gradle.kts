@@ -1,8 +1,13 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
-    includeBuild("build-logic")
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}
 
+dependencyResolutionManagement {
     repositories {
         google {
             content {
@@ -14,19 +19,13 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
-}
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
     }
 }
 
-rootProject.name = "Frame"
-include(":app")
-include(":core:ui")
-include(":core:network")
-include(":core:resources")
-include(":core:utils")
+rootProject.name = "build-logic"
+include(":convention")
